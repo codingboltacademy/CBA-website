@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="{% static 'images/CBA.1.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'cba.css' %}">
+    <script src="https://kit.fontawesome.com/fa25e510ab.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="nav-bar">
+            <div class="nav-bar-left">
+                <img src="{% static 'images/CBA.png' %}" alt="" class="nav-bar-left-logo">
+                <div class="nav-bar-left-title">
+                    Coding Bolt Academy
+                </div>    
+            </div>
+            
+            <div class="nav-bar-right">
+                <div class="nav-bar-child nav-bar-home">Home</div>
+                <div class="nav-bar-child nav-bar-course">Courses <i class="fa-solid fa-caret-down dropdown-arrow"></i>
+                    <div class="dropdown-content">
+                        <a href="#">Cyber Security</a>
+                        <a href="#">Web Development</a>
+                        <a href="#">Ai / ML</a>
+                      </div>
+                </div>
+                <div class="nav-bar-child">Blog</div>
+                <!-- <div class="nav-bar-child">About</div> -->
+                <div class="nav-bar-child contact" onclick="">Contact us</div>
+            </div>
+        </div>
+        <div class="Contact-content-parent">
+            <form class="Contact-content">
+                <div class="form-element">
+                    <label for="Ffirst-name">First name</label>
+                    <input type="text" placeholder="Your first name" class="contact-small-text">
+                </div>
+                <div class="form-element">
+                    <label for="Flast-name">Last name</label>
+                    <input type="text" placeholder="Your last name" class="contact-small-text">
+                </div>
+                <div class="form-element">
+                    <label for="Fphone-number">Phone number</label>
+                    <input type="number" placeholder="Your phone Number" class="contact-small-text">
+                </div>
+                <div class="form-element">
+                    <label for="Femail">Email</label>
+                    <input type="email" placeholder="example@gmail.com" class="contact-small-text">
+                </div>
+                <div class="form-element">
+                    <label for="Fmessage">Message</label>
+                    <textarea name="Fmessage" id="" cols="34" rows="5" placeholder="Your message......" class="contact-small-text"></textarea>
+                </div>
+                <div class="form-element">
+                    <label for="choose-course">Choose a course</label>
+                    <select name="" id="choose-course" class="contact-small-text choose-course-option">
+                        <option value="">Cyber Security</option>
+                        <option value="">Web Development (Front-End/Back-End)</option>
+                        <option value="">Web design</option>
+                        <option value="">Ethical Hacking</option>
+                    </select>
+                </div>
+                <div class="send-container">
+                    <input type="submit" value="Send" class="send">
+                </div>
+                <div></div>
+            </form>
+        </div>
+        <footer class="footer-contact">
+            <div class="footer-contact-detail">
+                <span style="font-size: 130%;">CONTACT US</span><br><br>
+                <span><i class="fa-solid fa-phone"></i> +91 79 8252 3966</span><br>
+                <span><i class="fa-solid fa-envelope"></i> Codingboltacademy@gmail.com</span><br>
+                <span><i class="fa-solid fa-location-dot location-icon"></i> Krishna Nagar</span><br>
+            </div>
+            <div class="Footer-follow">
+                Follow us <br><i class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-square-x-twitter"></i> <i class="fa-brands fa-square-instagram"></i>
+            </div>
+            <span class="copyright">Copyright © 2024</span>
+        </footer>   
+    </div>
+    <script>
+            document.querySelector(".nav-bar-left-title").onclick = function(){
+                location.href = '{% url "index" %}'
+            }
+            document.querySelector(".nav-bar-left-logo").onclick = function(){
+                location.href = '{% url "index" %}'
+            }
+            document.querySelector(".nav-bar-course").onclick = function(){
+                location.href = "courses.html"
+            }  
+            document.querySelector(".nav-bar-home").onclick = function(){
+            location.href= '{% url "home" %}'
+            }
+    </script>
+</body>
+</html>

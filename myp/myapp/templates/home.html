@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBA - Coding Bolt Academy</title>
+    <link rel="icon" href="{% static 'images/CBA.1.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'cba.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="choice">
+            <div class="home-courses">
+                <img src="{% static 'images/CBA.1.png' %}" alt="" class="img-courses"> 
+            </div>
+            <div class="home-services">
+                <img src="{% static 'images/CBA.1.png' %}" alt="" class="img-services">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".home-courses").onclick = function(){
+            location.href='{% url "index" %}'
+        }
+    </script>
+</body>
+</html>
